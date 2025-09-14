@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+    --primary: #445f3e;
+    --primary-trans: #445f3e80;
+}
+
+.content-width {
+    max-width: 1200px;
+}
+
+.subheadline {
+    color: var(--primary);
+    border-left: 2px solid var(--primary);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.overlay {
+    background: linear-gradient(var(--primary-trans), var(--primary-trans));
+    z-index: 2;
+}
