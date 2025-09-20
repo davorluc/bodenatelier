@@ -1,403 +1,321 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
-import AOS from 'aos';
-import 'aos/dist/aos.css'
-import { Image } from 'astro:assets';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Image } from "astro:assets";
 ---
 
 <!-- Hero Section -->
-<section class="hero-w-img text-black py-20 md:py-32 justify-center flex">
-    <div class="container mx-auto px-6 flex flex-col gap-16" data-aos="fade-up">
-		<div class="hero-img relative w-full h-full">
-			<Image class="rounded w-full object-cover aspect-[2/1] lg:aspect-[5/1] hero-img" src="http://static.photos/nature/1200x630/42" alt="Hero Image von Bergen" width="200" height="200"/>
-			<div class="overlay absolute w-full h-full top-0 rounded"></div>
-		</div>
-		<div class="flex flex-col lg:flex-row gap-6" data-aos="fade-up">
-			<div class="flex flex-col gap-4 items-start">
-				<p class="subheadline px-2">Alen's Bodenatelier</p>
-				<h1 class="text-4xl md:text-5xl">Hochwertige Bodenlösungen für jedes Zuhause</h1>
-			</div>
-			<div class="w-[100%] lg:w-[50%] flex flex-col gap-4 items-start">
-				<p>Alen's Bodenatelier verbindet traditionelle Handwerkskunst mit modernem Stil und höchster Langlebigkeit – für Böden, die nicht nur schön aussehen, sondern auch Generationen überdauern.</p>
-				<a href="#contact" class="bg-[var(--primary-trans)] hover:bg-[var(--primary)] text-white font-bold py-3 px-8 rounded-full transition duration-300">Kostenloses Angebot anfordern</a>
-			</div>
-		</div>
-	</div>
+<section class="hero-bg text-white py-32 flex items-center h-[80vh]">
+  <div class="container mx-auto px-6" data-aos="fade-up">
+    <p class="uppercase tracking-[0.2em] opacity-80 mb-4 text-sm">
+      Alen's Bodenatelier
+    </p>
+    <h1
+      class="text-5xl md:text-6xl text-shadow-lg/20 font-bold leading-tight mb-6"
+    >
+      Hochwertige Bodenlösungen,<br /> massgeschneidert für Ihr Zuhause
+    </h1>
+    <a href="#contact" class="cta inline-block mt-6"
+      >Kostenloses Angebot anfordern</a
+    >
+  </div>
 </section>
 
 <!-- Services Section -->
-<section id="services" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-primary mb-12" data-aos="fade-up">Unsere Dienstleistungen</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Service 1 -->
-            <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-feather="layers" class="text-white w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Parkettböden</h3>
-                <p class="text-gray-600">Premium-Parkettinstallation für zeitlose Eleganz und Langlebigkeit.</p>
-            </div>
-            <!-- Service 2 -->
-            <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-feather="box" class="text-white w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Laminat & Vinyl</h3>
-                <p class="text-gray-600">Preiswerte und stilvolle Bodenbeläge, die pflegeleicht sind.</p>
-            </div>
-            <!-- Service 3 -->
-            <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-feather="grid" class="text-white w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Fliesen & Naturstein</h3>
-                <p class="text-gray-600">Schöne und langlebige Fliesenlösungen für jeden Raum in Ihrem Zuhause.</p>
-            </div>
-            <!-- Service 4 -->
-            <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-feather="tool" class="text-white w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Aufbereitung & Reparaturen</h3>
-                <p class="text-gray-600">Wir bringen Ihre bestehenden Böden wieder in ihren ursprünglichen Zustand.</p>
-            </div>
+<section id="services" class="py-20 bg-styled text-white">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12">
+      Unsere Dienstleistungen
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-circle">
+          <i data-feather="layers" class="w-8 h-8"></i>
         </div>
+        <h3>Parkettböden</h3>
+        <p>
+          Premium-Parkettinstallation für zeitlose Eleganz und Langlebigkeit.
+        </p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-circle">
+          <i data-feather="box" class="w-8 h-8"></i>
+        </div>
+        <h3>Laminat & Vinyl</h3>
+        <p>Preiswerte und stilvolle Bodenbeläge, die pflegeleicht sind.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon-circle">
+          <i data-feather="grid" class="w-8 h-8"></i>
+        </div>
+        <h3>Fliesen & Naturstein</h3>
+        <p>
+          Schöne und langlebige Fliesenlösungen für jeden Raum in Ihrem Zuhause.
+        </p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="icon-circle">
+          <i data-feather="tool" class="w-8 h-8"></i>
+        </div>
+        <h3>Aufbereitung & Reparaturen</h3>
+        <p>
+          Wir bringen Ihre bestehenden Böden wieder in ihren ursprünglichen
+          Zustand.
+        </p>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- About Section -->
-<section id="about" class="py-16 bg-secondary">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12" data-aos="fade-right">
-                <img src="http://static.photos/industry/640x360/89" alt="Alen bei der Arbeit" class="rounded-lg shadow-lg w-full">
-            </div>
-            <div class="lg:w-1/2" data-aos="fade-left">
-                <h2 class="text-3xl font-bold text-primary mb-6">Über Alen</h2>
-                <p class="text-gray-700 mb-6 text-lg">Mit jahrelanger Erfahrung im Bodenhandwerk legt Alen grossen Wert auf zuverlässige, schöne und langlebige Ergebnisse.</p>
-                <p class="text-gray-600 mb-6">Von kleinen Wohnprojekten bis zu grossen Gewerbeflächen erhält jeder Boden die gleiche Liebe zum Detail und Qualitätsbewusstsein.</p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                        <i data-feather="award" class="text-white w-6 h-6"></i>
-                    </div>
-                    <p class="text-gray-600">Zertifizierter Bodenspezialist mit über 10 Jahren Erfahrung</p>
-                </div>
-            </div>
-        </div>
+<section id="about" class="py-20 bg-white text-gray-800">
+  <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center">
+    <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12" data-aos="fade-right">
+      <img
+        src="http://static.photos/industry/640x360/89"
+        alt="Alen bei der Arbeit"
+        class="rounded-lg shadow-lg w-full"
+      />
     </div>
+    <div class="lg:w-1/2 relative" data-aos="fade-left">
+      <span class="absolute -left-6 top-0 h-full w-[2px] bg-[var(--stone-dark)]"
+      ></span>
+      <h2
+        class="section-title text-3xl md:text-4xl font-bold mb-6 text-left text-[var(--primary)]"
+      >
+        Über Alen
+      </h2>
+      <p class="mb-6 text-lg">
+        Mit jahrelanger Erfahrung im Bodenhandwerk legt Alen grossen Wert auf
+        zuverlässige, schöne und langlebige Ergebnisse.
+      </p>
+      <p class="mb-6">
+        Von kleinen Wohnprojekten bis zu grossen Gewerbeflächen erhält jeder
+        Boden die gleiche Liebe zum Detail und Qualitätsbewusstsein.
+      </p>
+      <div class="flex items-center">
+        <div class="icon-circle mr-4">
+          <i data-feather="award" class="w-6 h-6"></i>
+        </div>
+        <p>Zertifizierter Bodenspezialist mit über 10 Jahren Erfahrung</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Why Choose Us Section -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-primary mb-12" data-aos="fade-up">Warum uns wählen</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-feather="star" class="text-white w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Qualitätshandwerk</h3>
-                <p class="text-gray-600">Präzision und Liebe zum Detail bei jedem Projekt.</p>
-            </div>
-            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-feather="shield" class="text-white w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Langlebige Materialien</h3>
-                <p class="text-gray-600">Wir verwenden nur Materialien höchster Qualität.</p>
-            </div>
-            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-feather="users" class="text-white w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Persönlicher Service</h3>
-                <p class="text-gray-600">Massgeschneiderte Lösungen, die auf Ihre Bedürfnisse abgestimmt sind.</p>
-            </div>
-            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-feather="dollar-sign" class="text-white w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Transparente Preise</h3>
-                <p class="text-gray-600">Keine versteckten Gebühren – nur ehrliche Angebote.</p>
-            </div>
-        </div>
+<!-- Why Choose Us -->
+<section class="py-20 bg-[var(--stone)] text-gray-800">
+  <div class="container mx-auto px-6">
+    <h2
+      class="section-title text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--primary)]"
+    >
+      Warum uns wählen
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-circle"><i data-feather="star"></i></div>
+        <h3>Qualitätshandwerk</h3>
+        <p>Präzision und Liebe zum Detail bei jedem Projekt.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-circle"><i data-feather="shield"></i></div>
+        <h3>Langlebige Materialien</h3>
+        <p>Wir verwenden nur Materialien höchster Qualität.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon-circle"><i data-feather="users"></i></div>
+        <h3>Persönlicher Service</h3>
+        <p>
+          Massgeschneiderte Lösungen, die auf Ihre Bedürfnisse abgestimmt sind.
+        </p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="icon-circle"><i data-feather="dollar-sign"></i></div>
+        <h3>Transparente Preise</h3>
+        <p>Keine versteckten Gebühren – nur ehrliche Angebote.</p>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Gallery Section -->
-<section id="gallery" class="py-16 bg-secondary">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-primary mb-12" data-aos="fade-up">Unsere Arbeiten</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div class="gallery-item" data-aos="fade-up">
-                <img src="http://static.photos/indoor/640x360/1" alt="Bodenprojekt" class="rounded-lg w-full h-64 object-cover">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="http://static.photos/indoor/640x360/2" alt="Bodenprojekt" class="rounded-lg w-full h-64 object-cover">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="http://static.photos/indoor/640x360/3" alt="Bodenprojekt" class="rounded-lg w-full h-64 object-cover">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-                <img src="http://static.photos/indoor/640x360/4" alt="Bodenprojekt" class="rounded-lg w-full h-64 object-cover">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
-                <img src="http://static.photos/indoor/640x360/5" alt="Bodenprojekt" class="rounded-lg w-full h-64 object-cover">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
-                <img src="http://static.photos/indoor/640x360/6" alt="Bodenprojekt" class="rounded-lg w-full h-64 object-cover">
-            </div>
-        </div>
+<!-- Gallery -->
+<section id="gallery" class="py-20 bg-white text-gray-800">
+  <div class="container mx-auto px-6">
+    <h2
+      class="section-title text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--primary)]"
+    >
+      Unsere Arbeiten
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="gallery-item" data-aos="fade-up">
+        <img src="http://static.photos/indoor/640x360/1" class="gallery-img" />
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="http://static.photos/indoor/640x360/2" class="gallery-img" />
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+        <img src="http://static.photos/indoor/640x360/3" class="gallery-img" />
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+        <img src="http://static.photos/indoor/640x360/4" class="gallery-img" />
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+        <img src="http://static.photos/indoor/640x360/5" class="gallery-img" />
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+        <img src="http://static.photos/indoor/640x360/6" class="gallery-img" />
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-primary mb-12" data-aos="fade-up">Was unsere Kunden sagen</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-secondary p-6 rounded-lg" data-aos="fade-up">
-                <div class="flex items-center mb-4">
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent"></i>
-                </div>
-                <p class="text-gray-600 mb-4">"Alen hat unser Wohnzimmer mit wunderschönen Parkettböden verwandelt. Seine Liebe zum Detail war beeindruckend!"</p>
-                <p class="font-semibold">- Sarah M.</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex items-center mb-4">
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent"></i>
-                </div>
-                <p class="text-gray-600 mb-4">"Professionell, pünktlich und perfekte Ergebnisse. Wir sind sehr zufrieden mit unserem neuen Küchenboden."</p>
-                <p class="font-semibold">- Thomas K.</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex items-center mb-4">
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent mr-1"></i>
-                    <i data-feather="star" class="text-accent"></i>
-                </div>
-                <p class="text-gray-600 mb-4">"Das Team hat unsere alten Parkettböden hervorragend aufgearbeitet. Sie sehen aus wie neu!"</p>
-                <p class="font-semibold">- Elena P.</p>
-            </div>
-        </div>
-    </div>
+<!-- Testimonials -->
+<section class="py-32 bg-styled text-white text-center">
+  <div class="container mx-auto px-6 max-w-5xl space-y-12">
+    <h2 class="text-4xl md:text-5xl font-heading font-bold leading-tight">
+      Wir glauben an Räume<br class="hidden md:block" /> mit Charakter.
+    </h2>
+    <h2 class="text-4xl md:text-5xl font-heading font-bold leading-tight">
+      Wir vereinen Handwerk<br class="hidden md:block" /> mit Mut und Vision.
+    </h2>
+    <h2 class="text-4xl md:text-5xl font-heading font-bold leading-tight">
+      Wir schaffen Böden,<br class="hidden md:block" /> die Generationen überdauern.
+    </h2>
+  </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-16 bg-primary text-white">
+<!-- Contact -->
+<section id="contact" class="py-20 bg-[var(--stone)] text-gray-800">
   <div class="container mx-auto px-6 flex justify-center">
-    <div class="bg-white text-gray-800 rounded-2xl shadow-xl overflow-hidden max-w-md w-full" data-aos="fade-up">
-      <!-- Image -->
-      <img 
-        src="https://static.photos/industry/1024x576/59.webp" 
-        alt="Alen, Inhaber von Alen's Bodenatelier" 
+    <div
+      class="bg-[var(--primary)] text-white rounded-2xl shadow-xl overflow-hidden max-w-md w-full"
+      data-aos="fade-up"
+    >
+      <img
+        src="https://static.photos/industry/1024x576/59.webp"
         class="w-full h-64 object-cover"
       />
-      <!-- Content -->
       <div class="p-6 text-center">
         <h3 class="text-2xl font-bold mb-2">Alen – Ihr Experte für Böden</h3>
-        <p class="mb-6 text-gray-600">
-          Mit Leidenschaft für Handwerkskunst und einem Auge fürs Detail 
-          begleite ich Sie bei Ihrem Bodenprojekt – persönlich, zuverlässig 
-          und mit höchstem Qualitätsanspruch.
+        <p class="mb-6">
+          Mit Leidenschaft für Handwerkskunst und einem Auge fürs Detail
+          begleite ich Sie bei Ihrem Bodenprojekt – persönlich, zuverlässig und
+          mit höchstem Qualitätsanspruch.
         </p>
-        <!-- Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="mailto:contact@alensbodenatelier.com" 
-            class="flex items-center justify-center gap-2 bg-[var(--primary-trans)] hover:bg-[var(--primary)] text-white font-semibold py-3 px-5 rounded-lg transition"
+          <a href="mailto:contact@alensbodenatelier.com" class="cta"
+            >E-Mail schreiben</a
           >
-            <i data-feather="mail"></i> E-Mail schreiben
-          </a>
-          <a 
-            href="tel:+15551234567" 
-            class="flex items-center justify-center gap-2 bg-[var(--primary-trans)] hover:bg-[var(--primary)] text-white font-semibold py-3 px-5 rounded-lg transition"
-          >
-            <i data-feather="phone"></i> Anrufen
-          </a>
+          <a href="tel:+15551234567" class="cta">Anrufen</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-
-
-
 <style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+  :root {
+    --stone: #f8f5ef;
+    --stone-dark: #e6e1d9;
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Inter", sans-serif;
+  }
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+  body {
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+  }
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+  /* Hero */
+  .hero-bg {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("http://static.photos/indoor/1200x630/104");
+    background-size: cover;
+    background-position: center;
+  }
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+  /* Section Titles */
+  .section-title {
+    position: relative;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--stone-dark);
+    margin: 0.5rem auto 0;
+  }
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+  /* Service Cards */
+  .service-card {
+    padding: 2rem;
+    border-radius: 0.75rem;
+    background: white;
+    color: #333;
+    border: 1px solid var(--stone-dark);
+    transition: all 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+  }
+  .service-card h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--primary);
+  }
+  .service-card p {
+    color: #4b5563;
+  }
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
+  /* Icons */
+  .icon-circle {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid var(--stone-dark);
+    color: var(--primary);
+  }
 
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
+  /* Gallery */
+  .gallery-img {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    border: 1px solid var(--stone-dark);
+    transition: all 0.3s ease;
+  }
+  .gallery-item:hover .gallery-img {
+    transform: scale(1.03);
+    border-color: var(--primary);
+  }
 
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
-
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
-
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
-
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
-
-	        .hero-bg {
-            background-image: linear-gradient(rgba(1, 50, 32, 0.6), rgba(1, 50, 32, 0.6)), url('http://static.photos/nature/1200x630/42');
-            background-size: cover;
-            background-position: center;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-        }
-        .gallery-item {
-            transition: all 0.3s ease;
-        }
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
+  /* CTA Buttons */
+  .cta {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--stone-dark);
+  }
+  .cta:hover {
+    background: var(--stone);
+    color: var(--primary);
+  }
 </style>

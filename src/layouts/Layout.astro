@@ -1,8 +1,8 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +10,10 @@ import '../styles/global.css';
     <title>Alen's Bodenatelier</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -20,48 +23,77 @@ import '../styles/global.css';
     <script src="https://unpkg.com/feather-icons" defer></script>
   </head>
 
-  <body class="font-sans bg-secondary">
+  <body class="font-sans relative">
     <!-- Navigation -->
-<nav class="bg-[var(--primary)] text-white shadow-md sticky top-0 z-50">
-  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-    <!-- Logo -->
-    <div class="flex items-center">
-      <span class="text-primary font-bold text-2xl">AB Logo</span>
+    <nav
+      class="flex flex-row w-full justify-between md:justify-center text-center bg-transparent gap-5 absolute text-white top-5 p-5 z-50"
+    >
+      <div class="flex items-center">
+        <span class="text-white font-bold text-2xl">AB Logo</span>
+      </div>
+      <div class="bg-styled px-6 py-4 flex rounded-full justify-between">
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#services" class="hover:text-gray-200">Dienstleisungen</a>
+          <a href="#about" class="hover:text-gray-200">Über mich</a>
+          <a href="#gallery" class="hover:text-gray-200">Galerie</a>
+          <a href="#contact" class="hover:text-gray-200">Kontakt</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="md:hidden text-white focus:outline-none"
+          id="mobile-menu-btn"
+        >
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="hidden fixed inset-0 bg-styled text-white flex flex-col items-center justify-center space-y-8 z-500"
+    >
+      <a
+        href="#services"
+        class="text-3xl font-heading hover:opacity-70 transition"
+        >Dienstleistungen</a
+      >
+      <a href="#about" class="text-3xl font-heading hover:opacity-70 transition"
+        >Über mich</a
+      >
+      <a
+        href="#gallery"
+        class="text-3xl font-heading hover:opacity-70 transition">Galerie</a
+      >
+      <a
+        href="#contact"
+        class="text-3xl font-heading hover:opacity-70 transition">Kontakt</a
+      >
+
+      <!-- Close Button -->
+      <button
+        id="mobile-menu-close"
+        class="absolute top-6 right-6 text-white p-6 text-6xl focus:outline-none"
+      >
+        <i data-feather="x"></i>
+      </button>
     </div>
-
-    <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center space-x-8">
-      <a href="#services" class="hover:text-gray-200">Dienstleisungen</a>
-      <a href="#about" class="hover:text-gray-200">Über mich</a>
-      <a href="#gallery" class="hover:text-gray-200">Galerie</a>
-      <a href="#contact" class="hover:text-gray-200">Kontakt</a>
-    </div>
-
-    <!-- Mobile Menu Button -->
-    <button class="md:hidden text-primary focus:outline-none" id="mobile-menu-btn">
-      <i data-feather="menu"></i>
-    </button>
-  </div>
-
-  <!-- Mobile Dropdown (hidden by default) -->
-  <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 px-6 pb-4 bg-[var(--primary)]">
-    <a href="#services" class="hover:text-gray-200">Dienstleisungen</a>
-    <a href="#about" class="hover:text-gray-200">Über mich</a>
-    <a href="#gallery" class="hover:text-gray-200">Galerie</a>
-    <a href="#contact" class="hover:text-gray-200">Kontakt</a>
-  </div>
-</nav>
-
 
     <!-- Page Content -->
     <slot />
 
     <!-- Footer -->
     <footer class="bg-[var(--primary)] text-white py-8">
-      <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center"
+      >
         <div class="mb-4 md:mb-0">
           <span class="text-xl font-bold">Alen's Bodenatelier</span>
-          <p class="text-white-400 mt-1">Bodenarbeit mit Schweizer Standard, seit 2025</p>
+          <p class="text-white-400 mt-1">
+            Bodenarbeit mit Schweizer Standard, seit 2025
+          </p>
         </div>
         <div class="text-white-400 text-sm">
           <p>&copy; 2025 Alen's Bodenatelier. Alle Rechte vorbehalten.</p>
@@ -71,28 +103,81 @@ import '../styles/global.css';
 
     <!-- Initialize AOS & Feather after DOM -->
     <script>
-      window.addEventListener('load', () => {
-        if (typeof AOS !== 'undefined') {
+      window.addEventListener("load", () => {
+        if (typeof AOS !== "undefined") {
           AOS.init({
             duration: 700,
-            easing: 'ease-in-out',
-            once: true
+            easing: "ease-in-out",
+            once: true,
           });
         }
-        if (typeof feather !== 'undefined') {
+        if (typeof feather !== "undefined") {
           feather.replace();
         }
 
         // Mobile menu toggle
-// Mobile menu toggle
-const btn = document.getElementById('mobile-menu-btn');
-const menu = document.getElementById('mobile-menu');
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const closeBtn = document.getElementById("mobile-menu-close");
 
-btn?.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
-});
+        btn?.addEventListener("click", () => {
+          menu.classList.remove("hidden");
+          menu.classList.remove("animate-fadeOut");
+          menu.classList.add("animate-fadeIn");
+        });
 
+        closeBtn?.addEventListener("click", () => {
+          menu.classList.remove("animate-fadeIn");
+          menu.classList.add("animate-fadeOut");
+
+          // wait for animation to finish before hiding
+          menu.addEventListener(
+            "animationend",
+            () => {
+              if (menu.classList.contains("animate-fadeOut")) {
+                menu.classList.add("hidden");
+              }
+            },
+            { once: true },
+          );
+        });
       });
     </script>
+
+    <!-- Animations -->
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(1.02);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          transform: scale(1);
+        }
+        to {
+          opacity: 0;
+          transform: scale(1.02);
+        }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-out forwards;
+        transition: hidden 0.3s;
+      }
+      .animate-fadeOut {
+        animation: fadeOut 0.3s ease-out forwards;
+        transition: hidden 0.3s;
+      }
+      .font-heading {
+        font-family: "Playfair Display", serif;
+      }
+    </style>
   </body>
 </html>
