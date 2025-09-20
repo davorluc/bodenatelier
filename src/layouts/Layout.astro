@@ -125,14 +125,9 @@ import logo from "../assets/AB.png";
         const btn = document.getElementById("mobile-menu-btn");
         const menu = document.getElementById("mobile-menu");
         const closeBtn = document.getElementById("mobile-menu-close");
+        const menuLinks = menu.querySelectorAll("a");
 
-        btn?.addEventListener("click", () => {
-          menu.classList.remove("hidden");
-          menu.classList.remove("animate-fadeOut");
-          menu.classList.add("animate-fadeIn");
-        });
-
-        closeBtn?.addEventListener("click", () => {
+        const closeMenu = () => {
           menu.classList.remove("animate-fadeIn");
           menu.classList.add("animate-fadeOut");
 
@@ -146,6 +141,19 @@ import logo from "../assets/AB.png";
             },
             { once: true },
           );
+        };
+
+        btn?.addEventListener("click", () => {
+          menu.classList.remove("hidden");
+          menu.classList.remove("animate-fadeOut");
+          menu.classList.add("animate-fadeIn");
+        });
+
+        closeBtn?.addEventListener("click", closeMenu);
+
+        // Close menu when any link is clicked
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", closeMenu);
         });
       });
     </script>
