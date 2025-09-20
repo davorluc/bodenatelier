@@ -2,6 +2,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Image } from "astro:assets";
+import autograph from "../assets/autograph.png";
 ---
 
 <!-- Hero Section -->
@@ -185,42 +186,72 @@ import { Image } from "astro:assets";
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-20 bg-[var(--stone)] text-gray-800">
-  <div class="container mx-auto px-6 flex justify-center">
+<section id="contact" class="py-24 bg-[var(--stone)] text-gray-900">
+  <div
+    class="container mx-auto px-6 max-w-5xl grid md:grid-cols-2 gap-12 items-center"
+  >
+    <!-- Image -->
     <div
-      class="bg-[var(--primary)] text-white rounded-2xl shadow-xl overflow-hidden max-w-md w-full"
-      data-aos="fade-up"
+      class="h-96 rounded-2xl overflow-hidden shadow-lg"
+      data-aos="fade-right"
     >
       <img
         src="https://static.photos/industry/1024x576/59.webp"
-        class="w-full h-64 object-cover"
+        alt="Alen, Inhaber von Alen's Bodenatelier"
+        class="w-full h-full object-cover"
       />
-      <div class="p-6 text-center">
-        <h3 class="text-2xl font-bold mb-2">Alen – Ihr Experte für Böden</h3>
-        <p class="mb-6">
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-8" data-aos="fade-left">
+      <div>
+        <h3 class="text-4xl font-heading font-bold text-[var(--primary)]">
+          Alen – Ihr Experte für Böden
+        </h3>
+        <p class="mt-4 text-lg leading-relaxed text-gray-700">
           Mit Leidenschaft für Handwerkskunst und einem Auge fürs Detail
           begleite ich Sie bei Ihrem Bodenprojekt – persönlich, zuverlässig und
           mit höchstem Qualitätsanspruch.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="mailto:contact@alensbodenatelier.com" class="cta"
-            >E-Mail schreiben</a
+      </div>
+
+      <!-- Divider Line -->
+      <hr class="border-t border-[var(--primary)] w-24 my-6" />
+
+      <!-- Contact Info -->
+      <div class="space-y-4 text-lg">
+        <p>
+          <i
+            data-feather="mail"
+            class="inline w-5 h-5 mr-2 text-[var(--primary)]"></i>
+          <a
+            href="mailto:contact@alensbodenatelier.com"
+            class="hover:underline"
           >
-          <a href="tel:+15551234567" class="cta">Anrufen</a>
-        </div>
+            contact@alensbodenatelier.com
+          </a>
+        </p>
+        <p>
+          <i
+            data-feather="phone"
+            class="inline w-5 h-5 mr-2 text-[var(--primary)]"></i>
+          <a href="tel:+15551234567" class="hover:underline">
+            +41 79 123 45 67
+          </a>
+        </p>
+      </div>
+
+      <!-- Signature -->
+      <div class="mt-10 flex flex-col gap-5">
+        <p class="text-lg italic text-gray-600">Beste Grüsse,</p>
+        <Image class="h-auto w-80" src={autograph} alt="Alen's Autogramm" />
+        <p class="text-lg italic text-gray-600">Alen Kruljac</p>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  :root {
-    --stone: #f8f5ef;
-    --stone-dark: #e6e1d9;
-    --font-heading: "Playfair Display", serif;
-    --font-body: "Inter", sans-serif;
-  }
-
   body {
     font-family: var(--font-body);
   }

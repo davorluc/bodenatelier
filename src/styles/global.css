@@ -3,6 +3,10 @@
 :root {
   --primary: #006040;
   --primary-trans: #00604080;
+  --stone: #f8f5ef;
+  --stone-dark: #e6e1d9;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
 }
 
 html,
