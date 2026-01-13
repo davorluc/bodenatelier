@@ -2,6 +2,12 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Image } from "astro:assets";
+import impression1 from "../assets/impression_1.jpeg";
+import impression2 from "../assets/impression_2.jpeg";
+import impression3 from "../assets/impression_3.jpeg";
+import impression4 from "../assets/impression_4.jpeg";
+import impression5 from "../assets/impression_5.jpeg";
+import impression6 from "../assets/impression_6.jpeg";
 import autograph from "../assets/autograph.png";
 import teppichVorher from "../assets/comparison/teppich_vorher.jpg";
 import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
@@ -153,37 +159,38 @@ import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
 </section>
 
 <!-- Gallery -->
-<section id="gallery" class="py-20 bg-white text-gray-800">
+<section id="gallery" class="py-20 bg-styled text-gray-800">
   <div class="container mx-auto px-6">
     <h2
-      class="section-title text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--primary)]"
+      class="section-title text-3xl md:text-4xl font-bold text-center mb-12 text-white"
     >
       Unsere Arbeiten
     </h2>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
       <div class="gallery-item" data-aos="fade-up">
-        <img src="http://static.photos/indoor/640x360/1" class="gallery-img" />
+        <Image src={impression1} alt="Impression 1" class="gallery-img" />
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="http://static.photos/indoor/640x360/2" class="gallery-img" />
+        <Image src={impression2} alt="Impression 2" class="gallery-img" />
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-        <img src="http://static.photos/indoor/640x360/3" class="gallery-img" />
+        <Image src={impression3} alt="Impression 3" class="gallery-img" />
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-        <img src="http://static.photos/indoor/640x360/4" class="gallery-img" />
+        <Image src={impression4} alt="Impression 4" class="gallery-img" />
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
-        <img src="http://static.photos/indoor/640x360/5" class="gallery-img" />
+        <Image src={impression5} alt="Impression 5" class="gallery-img" />
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
-        <img src="http://static.photos/indoor/640x360/6" class="gallery-img" />
+        <Image src={impression6} alt="Impression 6" class="gallery-img" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- Testimonials -->
+<!--
+<!-- Testimonials
 <section class="py-32 bg-styled text-white text-center">
   <div class="container mx-auto px-6 space-y-12">
     <div
@@ -267,7 +274,8 @@ import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
       </div>
     </div>
   </div>
-</section>
+</section>-->
+
 <!-- Contact -->
 <section id="contact" class="py-24 bg-[var(--stone)] text-gray-900">
   <div
@@ -343,7 +351,8 @@ import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
   .hero-bg {
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url("http://static.photos/indoor/1200x630/104");
+      /*url("http://static.photos/indoor/1200x630/104");*/
+        url("../assets/impression_1.jpeg");
     background-size: cover;
     background-position: center;
   }
@@ -399,7 +408,7 @@ import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
   .gallery-img {
     border-radius: 0.5rem;
     width: 100%;
-    height: 16rem;
+    height: 22rem;
     object-fit: cover;
     border: 1px solid var(--stone-dark);
     transition: all 0.3s ease;
