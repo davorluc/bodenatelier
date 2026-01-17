@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Image } from "astro:assets";
 import impression1 from "../assets/impression_1.jpeg";
+import heroImg from "../assets/impression_1.jpeg";
 import impression2 from "../assets/impression_2.jpeg";
 import impression3 from "../assets/impression_3.jpeg";
 import impression4 from "../assets/impression_4.jpeg";
@@ -17,7 +18,12 @@ import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
 ---
 
 <!-- Hero Section -->
-<section class="hero-bg text-white py-32 flex items-center h-[88vh]">
+<section class="hero-bg relative text-white py-32 flex items-center h-[88vh]">
+  <Image
+    src={impression1}
+    alt="Hero Image"
+    class="absolute z-[-1] h-full w-full object-cover"
+  />
   <div class="container mx-auto px-6" data-aos="fade-up">
     <p class="uppercase tracking-[0.2em] opacity-80 mb-4 text-sm">
       Massgeschneidert, mit wahrem Charakter
@@ -352,10 +358,8 @@ import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
 
   /* Hero */
   .hero-bg {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      /*url("http://static.photos/indoor/1200x630/104");*/
-        url("../assets/impression_1.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    /*url("http://static.photos/indoor/1200x630/104");*/
     background-size: cover;
     background-position: center;
   }
