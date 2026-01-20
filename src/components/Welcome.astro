@@ -2,8 +2,8 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Image } from "astro:assets";
+import logo from "../assets/AB.png";
 import impression1 from "../assets/impression_1.jpeg";
-import heroImg from "../assets/impression_1.jpeg";
 import impression2 from "../assets/impression_2.jpeg";
 import impression3 from "../assets/impression_3.jpeg";
 import impression4 from "../assets/impression_4.jpeg";
@@ -16,6 +16,12 @@ import autograph from "../assets/autograph.png";
 import teppichVorher from "../assets/comparison/teppich_vorher.jpg";
 import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
 ---
+
+<section
+  class="absolute w-full h-[100vh] flex items-center justify-center splash bg-styled z-50"
+>
+  <Image src={logo} alt="Alen's Bodenatelier Logo" class="self-center w-50" />
+</section>
 
 <!-- Hero Section -->
 <section class="hero-bg relative text-white py-32 flex items-center h-[88vh]">
@@ -580,6 +586,20 @@ import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
+  }
+
+  @keyframes splash-animation {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    100% {
+      top: -100%;
+    }
+  }
+
+  .splash {
+    animation: splash-animation 2.5s 1s ease-in forwards;
   }
 </style>
 
