@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Image } from "astro:assets";
 import logo from "../assets/AB.png";
+import heroImg from "../assets/hero.jpeg";
 import impression1 from "../assets/impression_1.jpeg";
 import impression2 from "../assets/impression_2.jpeg";
 import impression3 from "../assets/impression_3.jpeg";
@@ -12,6 +13,8 @@ import impression6 from "../assets/impression_6.jpeg";
 import impression7 from "../assets/impression_7.jpeg";
 import impression8 from "../assets/impression_8.jpeg";
 import impression9 from "../assets/impression_9.jpeg";
+import impression10 from "../assets/impression_10.jpeg";
+import impression11 from "../assets/impression_11.jpeg";
 import autograph from "../assets/autograph.png";
 import teppichVorher from "../assets/comparison/teppich_vorher.jpg";
 import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
@@ -26,7 +29,7 @@ import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
 <!-- Hero Section -->
 <section class="hero-bg relative text-white py-32 flex items-center h-[88vh]">
   <Image
-    src={impression1}
+    src={heroImg}
     alt="Hero Image"
     class="absolute z-[-1] h-full w-full object-cover"
   />
@@ -247,7 +250,23 @@ import teppichNachher from "../assets/comparison/teppich_nachher.jpg";
         data-aos-delay="500"
         data-aos="fade-up"
       >
-        <Image src={impression9} alt="Impression 9" class="gallery-img" />
+        <Image src={impression10} alt="Impression 9" class="gallery-img" />
+      </a>
+      <a
+        href={impression10.src}
+        class="gallery-item"
+        data-aos-delay="500"
+        data-aos="fade-up"
+      >
+        <Image src={impression10} alt="Impression 9" class="gallery-img" />
+      </a>
+      <a
+        href={impression11.src}
+        class="gallery-item"
+        data-aos-delay="500"
+        data-aos="fade-up"
+      >
+        <Image src={impression11} alt="Impression 9" class="gallery-img" />
       </a>
     </div>
   </div>
