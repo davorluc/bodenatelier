@@ -3,14 +3,42 @@ import "../styles/global.css";
 import { Image } from "astro:assets";
 import logo from "../assets/AB.png";
 import ImpressumModal from "../components/ImpressumModal.astro";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const businessData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": new URL("/#business", Astro.site).href,
+  name: "Alen's Bodenatelier",
+  legalName: "Alen's Bodenatelier GmbH",
+  url: Astro.site?.href,
+  telephone: "+41792871834",
+  email: "info@alensbodenatelier.ch",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Grundgasse 11",
+    postalCode: "9500",
+    addressLocality: "Wil SG",
+    addressCountry: "CH",
+  },
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de-CH">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alen's Bodenatelier</title>
+    <meta
+      name="description"
+      content="Alen's Bodenatelier in Wil SG: Parkett, Laminat, Vinyl und Teppich sowie Aufbereitung und Reparaturen Ihrer Böden. Jetzt kostenloses Angebot anfordern."
+    />
+    <link rel="canonical" href={canonicalURL.href} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(businessData).replace(/</g, "\\u003c")}
+    />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
 
