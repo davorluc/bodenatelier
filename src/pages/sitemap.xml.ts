@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 
 // Add new public page paths here when expanding the site.
-const pagePaths = ["/"];
+const pagePaths = ["/", "/parkett-verlegen/"];
 
 export const GET: APIRoute = ({ site }) => {
   const urls = pagePaths.map((path) => {

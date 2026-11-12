@@ -4,6 +4,15 @@ import { Image } from "astro:assets";
 import logo from "../assets/AB.png";
 import ImpressumModal from "../components/ImpressumModal.astro";
 
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Bodenleger in Wil SG – Parkett & Bodenbeläge | Alen's Bodenatelier",
+  description = "Alen's Bodenatelier in Wil SG: Parkett, Laminat, Vinyl und Teppich sowie Aufbereitung und Reparaturen Ihrer Böden. Jetzt kostenloses Angebot anfordern.",
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const businessData = {
   "@context": "https://schema.org",
@@ -29,11 +38,8 @@ const businessData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alen's Bodenatelier</title>
-    <meta
-      name="description"
-      content="Alen's Bodenatelier in Wil SG: Parkett, Laminat, Vinyl und Teppich sowie Aufbereitung und Reparaturen Ihrer Böden. Jetzt kostenloses Angebot anfordern."
-    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL.href} />
     <script
       type="application/ld+json"
@@ -71,11 +77,11 @@ const businessData = {
       <div class="bg-styled px-6 py-4 flex rounded-full justify-between">
         <!-- Desktop Nav -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#services" class="hover:text-gray-200">Dienstleisungen</a>
-          <a href="#about" class="hover:text-gray-200">Über mich</a>
-          <a href="#advantages" class="hover:text-gray-200">Vorteile</a>
-          <a href="#gallery" class="hover:text-gray-200">Galerie</a>
-          <a href="#contact" class="hover:text-gray-200">Kontakt</a>
+          <a href="/#services" class="hover:text-gray-200">Dienstleistungen</a>
+          <a href="/#about" class="hover:text-gray-200">Über mich</a>
+          <a href="/#advantages" class="hover:text-gray-200">Vorteile</a>
+          <a href="/#gallery" class="hover:text-gray-200">Galerie</a>
+          <a href="/#contact" class="hover:text-gray-200">Kontakt</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -94,23 +100,23 @@ const businessData = {
       class="hidden fixed inset-0 bg-styled text-white flex flex-col items-center justify-center space-y-8 z-500"
     >
       <a
-        href="#services"
+        href="/#services"
         class="text-3xl font-heading hover:opacity-70 transition"
         >Dienstleistungen</a
       >
-      <a href="#about" class="text-3xl font-heading hover:opacity-70 transition"
+      <a href="/#about" class="text-3xl font-heading hover:opacity-70 transition"
         >Über mich</a
       >
       <a
-        href="#advantages"
+        href="/#advantages"
         class="text-3xl font-heading hover:opacity-70 transition">Vorteile</a
       >
       <a
-        href="#gallery"
+        href="/#gallery"
         class="text-3xl font-heading hover:opacity-70 transition">Galerie</a
       >
       <a
-        href="#contact"
+        href="/#contact"
         class="text-3xl font-heading hover:opacity-70 transition">Kontakt</a
       >
 
@@ -124,7 +130,7 @@ const businessData = {
     </div>
 
     <!-- Page Content -->
-    <slot />
+    <main><slot /></main>
 
     <!-- Footer -->
     <footer class="bg-styled text-white py-8">
